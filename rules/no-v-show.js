@@ -1,3 +1,5 @@
+'use strict'
+
 const {createRule} = require('./utils/rule.js')
 
 const MESSAGE_ID = 'no-v-show'

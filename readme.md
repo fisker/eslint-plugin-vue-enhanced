@@ -14,8 +14,8 @@ Add this to your `.eslintrc.js`
 
 ```js
 module.exports = {
-  extends: ['plugin:vue-enhanced/recommended']
-};
+  extends: ['plugin:vue-enhanced/recommended'],
+}
 ```
 
 ## Rules
