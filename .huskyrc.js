@@ -5,6 +5,8 @@
  * document: https://git.io/fhNph
  */
 
+'use strict'
+
 /* @fisker/husky-config https://git.io/fjCe9 */
 
 module.exports = require('@fisker/husky-config')

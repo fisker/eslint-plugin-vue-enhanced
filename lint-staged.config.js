@@ -6,4 +6,6 @@
  *
  */
 
+'use strict'
+
 module.exports = require('@fisker/lint-staged-config')

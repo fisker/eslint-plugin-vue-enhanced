@@ -5,6 +5,8 @@
  * document: https://git.io/fhAJa
  */
 
+'use strict'
+
 module.exports = {
   extends: ['@fisker'],
 }

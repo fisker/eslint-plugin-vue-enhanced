@@ -23,7 +23,7 @@ module.exports = createRule({
       [MESSAGE_ID]: 'Please `:hidden` instead of `v-show`.',
     },
   },
-  create(context) {
+  create() {
     return {
       [selector](node) {
         return {
