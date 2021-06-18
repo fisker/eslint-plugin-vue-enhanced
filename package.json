@@ -30,6 +30,7 @@
     "format:markdown": "yarn lint:markdown --fix",
     "format:package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
     "format:prettier": "yarn lint:prettier --write",
+    "test": "ava",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,cjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
@@ -40,6 +41,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "ava": {
+    "files": [
+      "tests/*.mjs"
+    ],
+    "verbose": true
   },
   "devDependencies": {
     "@babel/code-frame": "7.14.5",

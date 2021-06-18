@@ -3,7 +3,11 @@ import Test from './utils/test.mjs'
 const test = new Test(import.meta)
 
 test.template({
-  valid: [],
+  valid: [
+    '<div v-not-show="foo"></div>',
+    '<div :hidden="foo"></div>',
+    '<div hidden="foo"></div>',
+  ],
   invalid: [
     '<div v-show="foo"></div>',
     '<div v-show="(foo)"></div>',
