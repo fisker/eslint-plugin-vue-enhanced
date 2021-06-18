@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-vue-enhanced",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "ESLint plugins for Vue.",
   "homepage": "https://github.com/fisker/eslint-plugin-vue-enhanced#readme",
   "bugs": {
