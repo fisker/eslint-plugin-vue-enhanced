@@ -8,10 +8,10 @@ module.exports = {
   configs: {
     recommended: {
       plugins: ['vue-enhanced'],
+      rules: Object.fromEntries(
+        Object.keys(rules).map((ruleId) => [`vue-enhanced/${ruleId}`, 'error'])
+      ),
     },
-    rules: Object.fromEntries(
-      Object.keys(rules).map((ruleId) => [`vue-enhanced/${ruleId}`, 'error'])
-    ),
   },
   rules,
 }
