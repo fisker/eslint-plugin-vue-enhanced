@@ -5,6 +5,8 @@
  * document: https://eslint.org/docs/user-guide/configuring
  */
 
+'use strict'
+
 /* @fisker/eslint-config https://git.io/fjOeH */
 
 module.exports = {
@@ -13,8 +15,21 @@ module.exports = {
   parserOptions: {},
   extends: ['@fisker'],
   settings: {},
-  rules: {},
+  rules: {
+    'node/no-unsupported-features/es-builtins': ['error', {version: '12'}],
+  },
   plugins: [],
   globals: {},
-  overrides: [],
+  overrides: [
+    {
+      files: ['**/*.js'],
+      parserOptions: {
+        sourceType: 'script',
+      },
+      rules: {
+        strict: ['error', 'global'],
+        'no-implicit-globals': 'off',
+      },
+    },
+  ],
 }

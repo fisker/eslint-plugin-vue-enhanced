@@ -1,3 +1,8 @@
+'use strict'
+
+const path = require('path')
+const fs = require('fs')
+
 const isIterable = (object) => typeof object[Symbol.iterator] === 'function'
 
 function reportListenerProblems(listener, context) {
@@ -79,4 +84,16 @@ function createRule(rule, options) {
   }
 }
 
-module.exports = {createRule}
+function loadRules() {
+  return Object.fromEntries(
+    fs
+      .readdirSync(path.join(__dirname, '..'), {withFileTypes: true})
+      .filter((file) => file.isFile())
+      .map((file) => {
+        const ruleId = path.basename(file.name, '.js')
+        return [ruleId, require(`../${ruleId}.js`)]
+      })
+  )
+}
+
+module.exports = {createRule, loadRules}

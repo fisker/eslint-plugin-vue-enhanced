@@ -1,6 +1,7 @@
 {
   "name": "eslint-plugin-vue-enhanced",
   "version": "0.0.0",
+  "description": "ESLint plugins for Vue.",
   "homepage": "https://github.com/fisker/eslint-plugin-vue-enhanced#readme",
   "bugs": {
     "url": "https://github.com/fisker/eslint-plugin-vue-enhanced/issues"
@@ -15,6 +16,10 @@
   },
   "sideEffects": false,
   "main": "index.js",
+  "files": [
+    "index.js",
+    "rules"
+  ],
   "scripts": {
     "clean": "run-p clean:*",
     "clean:dist": "del-cli dist",
@@ -25,6 +30,7 @@
     "format:markdown": "yarn lint:markdown --fix",
     "format:package-json": "sort-package-json \"package.json\" \"packages/*/package.json\"",
     "format:prettier": "yarn lint:prettier --write",
+    "test": "ava",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint \"**/*.{js,mjs,cjs,vue}\"",
     "lint:markdown": "markdownlint \"**/*.md\" --ignore \"**/node_modules/**\"",
@@ -35,6 +41,12 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "ava": {
+    "files": [
+      "tests/*.mjs"
+    ],
+    "verbose": true
   },
   "devDependencies": {
     "@babel/code-frame": "7.14.5",
