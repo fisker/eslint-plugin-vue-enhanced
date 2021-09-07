@@ -53,7 +53,7 @@ class Test {
   template(tests) {
     for (const type of ['valid', 'invalid']) {
       tests[type] = tests[type].map((testCase) =>
-        normalizeTestCases(testCase, 'template')
+        normalizeTestCases(testCase, 'template'),
       )
     }
     return this.run(tests)

@@ -9,7 +9,7 @@ module.exports = {
     recommended: {
       plugins: ['vue-enhanced'],
       rules: Object.fromEntries(
-        Object.keys(rules).map((ruleId) => [`vue-enhanced/${ruleId}`, 'error'])
+        Object.keys(rules).map((ruleId) => [`vue-enhanced/${ruleId}`, 'error']),
       ),
     },
   },

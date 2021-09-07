@@ -50,7 +50,7 @@ function normalizeTests(tests) {
   ])
   if (additionalProperties.length !== 0) {
     throw new Error(
-      `Unexpected snapshot test properties: ${additionalProperties.join(', ')}`
+      `Unexpected snapshot test properties: ${additionalProperties.join(', ')}`,
     )
   }
 
@@ -73,8 +73,8 @@ function normalizeTests(tests) {
       if (additionalProperties.length !== 0) {
         throw new Error(
           `Unexpected ${type} snapshot test case properties: ${additionalProperties.join(
-            ', '
-          )}`
+            ', ',
+          )}`,
         )
       }
     }
@@ -127,7 +127,7 @@ class SnapshotRuleTester {
         (t) => {
           const messages = linter.verify(code, verifyConfig, {filename})
           t.deepEqual(messages, [], 'Valid case should not has errors.')
-        }
+        },
       )
     }
 
@@ -145,7 +145,7 @@ class SnapshotRuleTester {
           t.notDeepEqual(
             messages,
             [],
-            'Invalid case should has at least one error.'
+            'Invalid case should has at least one error.',
           )
 
           const fatalError = messages.find(({fatal}) => fatal)
@@ -164,7 +164,7 @@ class SnapshotRuleTester {
           if (Array.isArray(options)) {
             t.snapshot(
               `\n${JSON.stringify(options, undefined, 2)}\n`,
-              'Options'
+              'Options',
             )
           }
 
@@ -179,7 +179,7 @@ class SnapshotRuleTester {
             if (suggestions.length !== 0 && rule.meta.hasSuggestions !== true) {
               // This check will no longer be necessary if this change lands in ESLint 8: https://github.com/eslint/eslint/issues/14312
               throw new Error(
-                'Rule with suggestion is missing `meta.hasSuggestions`.'
+                'Rule with suggestion is missing `meta.hasSuggestions`.',
               )
             }
 
@@ -195,10 +195,10 @@ class SnapshotRuleTester {
 
             t.snapshot(
               `\n${messageForSnapshot}\n`,
-              `Error ${index + 1}/${messages.length}`
+              `Error ${index + 1}/${messages.length}`,
             )
           }
-        }
+        },
       )
     }
   }

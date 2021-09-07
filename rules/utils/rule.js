@@ -33,7 +33,7 @@ function reportProblems(create) {
       Object.entries(create(context)).map(([selector, listener]) => [
         selector,
         reportListenerProblems(listener, context),
-      ])
+      ]),
     )
 }
 
@@ -64,7 +64,7 @@ function checkVueSfc(create, options) {
 
     return context.parserServices.defineTemplateBodyVisitor(
       templateBlockListeners,
-      scriptBlockListeners
+      scriptBlockListeners,
     )
   }
 }
@@ -92,7 +92,7 @@ function loadRules() {
       .map((file) => {
         const ruleId = path.basename(file.name, '.js')
         return [ruleId, require(`../${ruleId}.js`)]
-      })
+      }),
   )
 }
 
